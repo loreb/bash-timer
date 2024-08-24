@@ -77,12 +77,23 @@ bashtimer_precmd() {
       end_ns=${EPOCHREALTIME#*.}
       end_ns="${end_ns#0}"
 
+      # Convert strings with leading zeros to base 10 integers
+      begin_ns=$((10#$begin_ns))
+      end_ns=$((10#$end_ns))
+
       s=$((end_s - begin_s))
       if [ "$end_ns" -ge "$begin_ns" ]; then
-        ms=$(printf "%03d" $((((1000000 + end_ns) - (1000000 + begin_ns)) / 1000)))
+        ms=$(( (1000000 + end_ns - begin_ns) / 1000 ))
       else
-        ms=$(printf "%03d" $((((1000000 + end_ns) - (1000000 + begin_ns)) / -1000)))
+        ms=$(( (1000000 + end_ns - begin_ns) / -1000 ))
       fi
+
+      # Ensure `ms` is always handled as an integer, stripping any leading zeroes internally:
+      ms=$((10#$ms))
+
+      # Ensure ms is always three digits for consistency in output:
+      ms=$(( ms + 1000 ))
+      ms="${ms:1}"
     else
       # For Bash < v5.0
       read end_s end_ns <<< $(date +"%s %N")
