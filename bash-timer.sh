@@ -100,14 +100,16 @@ bashtimer_precmd() {
     if (($s > 60)); then
       timer_show="$(human_time $s).$ms"
     else
-      timer_show="$s.$ms"
+      timer_show="$s.$ms "
     fi
   fi
 
   if [ -z "$PS1orig" ]; then
     PS1orig=$PS1
   else
-    PS1="${BOLD}$timer_show${RESET} $PS1orig"
+      if [ -z "$NO_BASHTIMER" ]; then
+    PS1="${BOLD}$timer_show${RESET}$PS1orig"
+        fi
   fi
 }
 
