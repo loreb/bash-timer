@@ -47,7 +47,7 @@ echo "04947faeb7f735d37cce12d820a1766ce0eb8288b64ee119e3ca1b00c4ed69ebce  $HOME/
 ```
 ## License
 
-This project is licensed under the Apache v2.0 License (see LICENSE.md).
+This project is licensed under the [Creative Commons Attribution License v4.0 International](LICENSE.cc-by.md).
 
 ![License Summary](https://user-images.githubusercontent.com/1125541/93617603-cd6de580-f99b-11ea-9da4-f79c168c97df.png)
 

@@ -1,4 +1,9 @@
 #!/bin/bash
+## Bash Timer
+##   https://github.com/hopeseekr/bash-timer/
+##   https://github.com/hopeseekr/BashScripts/
+##
+## Copyright © 2020-2024 Theodore R. Smith <theodore@phpexperts.pro>
 
 if [ ! -f ~/.bash-timer.sh ]; then
   # Pull down our file from GitHub and write it to our home directory as a hidden file.

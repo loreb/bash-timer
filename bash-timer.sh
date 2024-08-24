@@ -1,14 +1,15 @@
 ## Bash Timer
-##   https://github.com/hopeseekr/bash-timer
+##   https://github.com/hopeseekr/bash-timer/
+##   https://github.com/hopeseekr/BashScripts/
 ##
-## Copyright © 2020 Theodore R. Smith <theodore@phpexperts.pro>
+## Copyright © 2020-2024 Theodore R. Smith <theodore@phpexperts.pro>
 ##   GPG Fingerprint: 4BF8 2613 1C34 87AC D28F  2AD8 EB24 A91D D612 5690
 ##   https://stackoverflow.com/users/story/430062
 ##
 ## Based off of the work of
 ##  * https://jakemccrary.com/blog/2020/04/21/using-bash-preexec-for-monitoring-the-runtime-of-your-last-command/
 ##
-## This file is licensed under the Apache v2.0 License.
+## This file is licensed under the Creative Commons Attribution License v4.0 International.
 
 ## Set up tput for multi-terminal color support.
 if [ $(builtin type -P "tput" 2>&1)  ]; then
