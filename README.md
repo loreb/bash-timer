@@ -1,7 +1,5 @@
 ## Bash Timer
 
-[![Build Status](https://travis-ci.com/hopeseekr/bash-timer.svg?branch=master)](https://travis-ci.com/hopeseekr/bash-timer)
-
 Shows a human-readable execution time for every command run in bash.
 
 You might also find my [**Amazing Linux, PHP, and Git Aliases**](https://gist.github.com/hopeseekr/fb85b7a179e3b9c97212925a2bd8400b) quite useful as well.
@@ -18,7 +16,7 @@ The time will show up in the bottom left, immediately left of your `$PS1`.
 ### Use the Installer
 
 ```bash
-curl https://raw.githubusercontent.com/hopeseekr/bash-timer/v1.0/install | bash
+curl https://raw.githubusercontent.com/hopeseekr/bash-timer/v1.5.0/install | bash
 ```
 
 ### Manual
@@ -26,14 +24,14 @@ curl https://raw.githubusercontent.com/hopeseekr/bash-timer/v1.0/install | bash
 1. Download the files:
 
 ```bash
-curl https://raw.githubusercontent.com/hopeseekr/bash-timer/v1.0/bash-timer.sh -o $HOME/.bash-timer.sh
-echo "6dcd684666ec515a976837f3284f3efb7124c0bac1763d752f20d8faf90ac946  $HOME/.bash-timer.sh" | sha256sum -c -
+curl https://raw.githubusercontent.com/hopeseekr/bash-timer/v1.5.0/bash-timer.sh -o $HOME/.bash-timer.sh
+echo "c9cf58a86712eb7360e08a072d03e53548e5e362944ab651aa71ee2a7846d22f $HOME/.bash-timer.sh" | sha256sum -c -
 
-curl https://raw.githubusercontent.com/bash-timer/bash-timer/v1.0/assets/bash-preexec.sh -o $HOME/.bash-preexec.sh
-echo "04947faeb7f735d37cce12d820a1766ce0eb8288b64ee119e3ca1b00c4ed69ebce  $HOME/.bash-preexec.sh" | sha256sum -c -
+curl https://raw.githubusercontent.com/hopeseekr/bash-timer/v1.5.0/assets/bash-preexec.sh -o $HOME/.bash-preexec.sh
+echo "d512aa6043d69d636f0db711aab1675cc7c49b39da9ae58afcfb916dca8c4464 $HOME/.bash-preexec.sh" | sha256sum -c -
 ```
 
-2. Add the following to the very bottom of your `~/.bash_rc`.
+2. Add the following to the very bottom of your `~/.bashrc`.
 
 ```bash
 # Bash Timer

@@ -10,6 +10,8 @@
 ##  * https://jakemccrary.com/blog/2020/04/21/using-bash-preexec-for-monitoring-the-runtime-of-your-last-command/
 ##
 ## This file is licensed under the Creative Commons Attribution License v4.0 International.
+##
+## Version 1.5.0 @ 2024-08-24.
 
 ## Set up tput for multi-terminal color support.
 if [ $(builtin type -P "tput" 2>&1)  ]; then
