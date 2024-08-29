@@ -56,6 +56,9 @@ bashtimer_preexec() {
   # Thanks to /u/OneTurnMore
   # https://www.reddit.com/r/bash/comments/ivz276/tired_of_typing_time_all_the_time_try_bashtimer/g5wui2l/
   if [ ! -z "$EPOCHREALTIME" ]; then
+    # Replace "," decimal separator with ".". This is needed for European locales, among others.
+    EPOCHREALTIME="${EPOCHREALTIME/,/.}"
+
     begin_s=${EPOCHREALTIME%.*}
     begin_ns=${EPOCHREALTIME#*.}
     begin_ns="${begin_ns#0}"
@@ -75,6 +78,9 @@ bashtimer_precmd() {
     # Thanks to /u/OneTurnMore
     # https://www.reddit.com/r/bash/comments/ivz276/tired_of_typing_time_all_the_time_try_bashtimer/g5wui2l/
     if [ ! -z "$EPOCHREALTIME" ]; then
+      # Replace "," decimal separator with ".". This is needed for European locales, among others.
+      EPOCHREALTIME="${EPOCHREALTIME/,/.}"
+
       end_s=${EPOCHREALTIME%.*}
       end_ns=${EPOCHREALTIME#*.}
       end_ns="${end_ns#0}"
