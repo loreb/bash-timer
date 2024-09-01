@@ -23,6 +23,14 @@ else
   RESET="\[\033[0m\]"
 fi
 
+pad_number() {
+  number="$1"
+  while [ ${#number} -lt 3 ]; do
+    number="0${number}"
+  done
+  echo "$number"
+}
+
 human_time()
 {
   local msg
@@ -100,8 +108,7 @@ bashtimer_precmd() {
       ms=$((10#$ms))
 
       # Ensure ms is always three digits for consistency in output:
-      ms=$(( ms + 1000 ))
-      ms="${ms:1}"
+      ms=$(pad_number "$ms")
     else
       # For Bash < v5.0
       read end_s end_ns <<< $(date +"%s %N")
