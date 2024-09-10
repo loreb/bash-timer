@@ -63,10 +63,10 @@ bashtimer_preexec() {
   # https://www.reddit.com/r/bash/comments/ivz276/tired_of_typing_time_all_the_time_try_bashtimer/g5wui2l/
   if [ ! -z "$EPOCHREALTIME" ]; then
     # Replace "," decimal separator with ".". This is needed for European locales, among others.
-    EPOCHREALTIME="${EPOCHREALTIME/,/.}"
+    local _EPOCHREALTIME="${EPOCHREALTIME/,/.}"
 
-    begin_s=${EPOCHREALTIME%.*}
-    begin_ns=${EPOCHREALTIME#*.}
+    begin_s=${_EPOCHREALTIME%.*}
+    begin_ns=${_EPOCHREALTIME#*.}
     begin_ns="${begin_ns#0}"
   else
     read begin_s begin_ns <<< $(date +"%s %N")
@@ -85,11 +85,11 @@ bashtimer_precmd() {
     # https://www.reddit.com/r/bash/comments/ivz276/tired_of_typing_time_all_the_time_try_bashtimer/g5wui2l/
     if [ ! -z "$EPOCHREALTIME" ]; then
       # Replace "," decimal separator with ".". This is needed for European locales, among others.
-      EPOCHREALTIME="${EPOCHREALTIME/,/.}"
+      local _EPOCHREALTIME="${EPOCHREALTIME/,/.}"
 
-      end_s=${EPOCHREALTIME%.*}
+      end_s=${_EPOCHREALTIME%.*}
       # echo "Begin Seconds: $begin_s | End Seconds: $end_s"
-      end_ns=${EPOCHREALTIME#*.}
+      end_ns=${_EPOCHREALTIME#*.}
       end_ns="${end_ns#0}"
 
       if [ $end_ns -lt $begin_ns ]; then
