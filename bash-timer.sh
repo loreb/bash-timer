@@ -92,13 +92,13 @@ bashtimer_precmd() {
       end_ns=${_EPOCHREALTIME#*.}
       end_ns="${end_ns#0}"
 
+      # Convert strings with leading zeros to base 10 integers
+      begin_ns=$((10#$begin_ns))
+      end_ns=$((10#$end_ns))
       if [ $end_ns -lt $begin_ns ]; then
         end_ns=$((1000000 + $end_ns))
         end_s=$(($end_s - 1))
       fi
-      # Convert strings with leading zeros to base 10 integers
-      begin_ns=$((10#$begin_ns))
-      end_ns=$((10#$end_ns))
 
       s=$((end_s - begin_s))
       if [ "$end_ns" -ge "$begin_ns" ]; then
